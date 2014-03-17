@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+    	android:id="@+id/LayoutInAddClock"
+		android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal" 
+    	android:background="#87CEFA">
+    	
+    	<TextView
+    		android:id="@+id/TitleInAddClock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="添加闹钟"
+    		android:textSize="20dp"
+    		android:layout_centerInParent="true"
+    		/>
+    
+    	<Button
+    		android:id="@+id/QuitInAddClock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="取消"
+    		android:layout_alignParentLeft="true"
+    		/>
+    	
+    	<Button
+    		android:id="@+id/SaveInAddClock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="储存"
+    		android:layout_alignParentRight="true"
+    		/>
+    	
+	</RelativeLayout>
+	
+	<ListView
+		android:id="@+id/ListViewInAddClock"
+		android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@id/LayoutInAddClock"
+    	android:layout_marginTop="30dp"
+    	android:layout_marginBottom="30dp"
+    	/>
+    
+    <TimePicker
+    	android:id="@+id/TimePickerInAddClock"
+    	android:layout_width="wrap_content"
+    	android:layout_height="300dp"
+    	android:layout_centerInParent="true"
+    	android:layout_alignParentBottom="true"
+    	/>
+    	
+ </RelativeLayout>
+    

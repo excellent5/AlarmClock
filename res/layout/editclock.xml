@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+    	android:id="@+id/LayoutInEditClock"
+		android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal" 
+    	android:background="#87CEFA"
+    	>
+    	
+    	<TextView
+    		android:id="@+id/TitleInEditClock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="编辑闹钟"
+    		android:textSize="20dp"
+    		android:layout_centerInParent="true"
+    		/>
+    
+    	<Button
+    		android:id="@+id/QuitInEditClock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="取消"
+    		android:layout_alignParentLeft="true"
+    		/>
+    	
+    	<Button
+    		android:id="@+id/SaveInEditClock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="储存"
+    		android:layout_alignParentRight="true"
+    		/>
+    	
+	</RelativeLayout>
+	
+	
+	<ListView
+		android:id="@+id/ListViewInEditClock"
+		android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_below="@id/LayoutInEditClock"
+    	android:layout_marginTop="30dp"
+    	android:layout_marginBottom="30dp"
+    	/>
+    
+    <TimePicker
+    	android:id="@+id/TimePickerInEditClock"
+    	android:layout_width="wrap_content"
+    	android:layout_height="500dp"
+    	android:layout_centerInParent="true"
+    	android:layout_below="@id/ListViewInEditClock"
+    	/>
+    	
+	<Button
+    	android:id="@+id/DeleteInEditClock"
+    	android:layout_height="wrap_content"
+    	android:layout_width="wrap_content"
+    	android:layout_centerHorizontal="true"
+    	android:text="删除闹钟"
+    	android:textSize="20dp"
+    	android:layout_alignParentBottom="true"
+    	/>   
+    
+
+</RelativeLayout>
