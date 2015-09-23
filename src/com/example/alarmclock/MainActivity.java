@@ -249,7 +249,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public ArrayList<Calendar> getAlarmTimeCalendar(int hour,int minute,Cursor cursor){
-		int Today = 0,Toyear=2013;
+		int Today = 0,Toyear=2015;
 		ArrayList<Calendar> cal=new ArrayList<Calendar>();
 		multiple=new ArrayList<Integer>();
 		Calendar c=Calendar.getInstance();
@@ -267,12 +267,12 @@ public class MainActivity extends Activity {
 		}
 		
 		else {
-			new AlertDialog.Builder(MainActivity.this).setTitle("ERROR!").setMessage("距离初始设置日期超过一年了，请卸载软件重新安装设置日期")
-			.setPositiveButton("确定", new DialogInterface.OnClickListener(){				
+			new AlertDialog.Builder(MainActivity.this).setTitle("ERROR!").setMessage(R.string.error_message)
+			.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 				@Override
-				public void onClick(DialogInterface dialog, int which){
+				public void onClick(DialogInterface dialog, int which) {
 					MainActivity.this.finish();
-				}				
+				}
 			}).show();
 		}
 		
@@ -377,19 +377,19 @@ public class MainActivity extends Activity {
 	public String ChangeToChinese(int i){
 		switch(i){
 		case 0:
-			return "周一";
+			return "Monday";
 		case 1:
-			return "周二";
+			return "Tuesday";
 		case 2:
-			return "周三";
+			return "Wednesday";
 		case 3:
-			return "周四";
+			return "Thursday";
 		case 4:
-			return "周五";
+			return "Friday";
 		case 5:
-			return "周六";
+			return "Saturday";
 		case 6:
-			return "周日";
+			return "Sunday";
 		default:
 			return "error!";					
 		}
@@ -397,9 +397,9 @@ public class MainActivity extends Activity {
 	
 	public String ShowFrequency(Cursor cursor){
 		String repeat="";
-		String repeat1="单周重复: ";
-		String repeat2="双周重复: ";
-		String repeat3="每周重复: ";
+		String repeat1="Repeat on single week: ";
+		String repeat2="Repeat on dual week: ";
+		String repeat3="Repeat on every week: ";
 		int count1=0,count2=0,count3=0;
 		for(int i=0;i<7;i++){
 			switch(cursor.getInt(i+3)){			
@@ -409,7 +409,7 @@ public class MainActivity extends Activity {
 					repeat1=repeat1+"\n";
 					count1=0;
 				}
-				repeat1=repeat1+ChangeToChinese(i)+"、";
+				repeat1=repeat1+ChangeToChinese(i)+", ";
 				break;
 		
 			case 2:
@@ -418,7 +418,7 @@ public class MainActivity extends Activity {
 					repeat2=repeat2+"\n";
 					count2=0;
 				}
-				repeat2=repeat2+ChangeToChinese(i)+"、";
+				repeat2=repeat2+ChangeToChinese(i)+", ";
 				break;
 		
 			case 3:
@@ -427,7 +427,7 @@ public class MainActivity extends Activity {
 					repeat3=repeat3+"\n";
 					count3=0;
 				}
-				repeat3=repeat3+ChangeToChinese(i)+"、";
+				repeat3=repeat3+ChangeToChinese(i)+", ";
 				break;
 		
 			default:
@@ -439,26 +439,26 @@ public class MainActivity extends Activity {
 		repeat2=repeat2.substring(0, repeat2.length()-1);
 		repeat3=repeat3.substring(0, repeat3.length()-1);
 		
-		if(repeat1.equals("单周重复:")){
-			if(repeat2.equals("双周重复:")){
-				if(repeat3.equals("每周重复:"))
-					repeat="无";
+		if(repeat1.equals("Repeat on single week:")){
+			if(repeat2.equals("Repeat on dual week:")){
+				if(repeat3.equals("Repeat on every week:"))
+					repeat="No repeat";
 				else repeat=repeat3;
 			}
 			else{
-				if(repeat3.equals("每周重复:"))
+				if(repeat3.equals("Repeat on every week:"))
 					repeat=repeat2;
 				else repeat=repeat2+"\n"+repeat3;
 			}
 		}
 		else{
-			if(repeat2.equals("双周重复:")){
-				if(repeat3.equals("每周重复:"))
+			if(repeat2.equals("Repeat on dual week:")){
+				if(repeat3.equals("Repeat on every week:"))
 					repeat=repeat1;
 				else repeat=repeat1+"\n"+repeat3;
 			}
 			else{
-				if(repeat3.equals("每周重复:"))
+				if(repeat3.equals("Repeat on every week:"))
 					repeat=repeat1+"\n"+repeat2;
 				else repeat=repeat1+"\n"+repeat2+"\n"+repeat3;
 			}

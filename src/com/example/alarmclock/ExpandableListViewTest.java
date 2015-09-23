@@ -60,7 +60,7 @@ public class ExpandableListViewTest extends Activity{
 		
 		ExpandableListAdapter adapter = new BaseExpandableListAdapter(){
  			private String[] DayOfTheWeek = new String[]
-				{ "每周一", "每周二", "每周三","每周四","每周五","每周六","每周日"};
+				{ "Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday","Sunday"};
 			
 
 			@Override
@@ -84,16 +84,16 @@ public class ExpandableListViewTest extends Activity{
 				RadioGroup rg=new RadioGroup(ExpandableListViewTest.this);					
 			//	rg.setPadding(30, 10, 30, 10);
 				RadioButton rb1=new RadioButton(ExpandableListViewTest.this);
-				rb1.setText("不重复");
+				rb1.setText("No repeat");
 				rb1.setId(0);
 				RadioButton rb2=new RadioButton(ExpandableListViewTest.this);
-				rb2.setText("单周重复");
+				rb2.setText("Repeat on single week");
 				rb2.setId(1);
 				RadioButton rb3=new RadioButton(ExpandableListViewTest.this);
-				rb3.setText("双周重复");
+				rb3.setText("Repeat on dual week");
 				rb3.setId(2);
 				RadioButton rb4=new RadioButton(ExpandableListViewTest.this);
-				rb4.setText("每周重复");
+				rb4.setText("Repeat on every week");
 				rb4.setId(3);
 				rg.addView(rb1,0);
 				rg.addView(rb2,1);

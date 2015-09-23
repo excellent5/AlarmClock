@@ -30,32 +30,33 @@ public class AddClock extends Activity{
 	ListView lv;
 	int[] number=new int[]{0,0,0,0,0,0,0};
 	String repeat="";
-	
+
 	public String ChangeToChinese(int i){
 		switch(i){
-		case 0:
-			return "周一";
-		case 1:
-			return "周二";
-		case 2:
-			return "周三";
-		case 3:
-			return "周四";
-		case 4:
-			return "周五";
-		case 5:
-			return "周六";
-		case 6:
-			return "周日";
-		default:
-			return "error!";					
+			case 0:
+				return "Monday";
+			case 1:
+				return "Tuesday";
+			case 2:
+				return "Wednesday";
+			case 3:
+				return "Thursday";
+			case 4:
+				return "Friday";
+			case 5:
+				return "Saturday";
+			case 6:
+				return "Sunday";
+			default:
+				return "error!";
 		}
 	}
-	
+
+
 	public void ShowFrequency(int[] array){
-		String repeat1="单周重复: ";
-		String repeat2="双周重复: ";
-		String repeat3="每周重复: ";
+		String repeat1="Repeat on single week: ";
+		String repeat2="Repeat on dual week: ";
+		String repeat3="Repeat on every week: ";
 		int count1=0,count2=0,count3=0;
 		for(int i=0;i<array.length;i++){
 			switch(array[i]){
@@ -65,7 +66,7 @@ public class AddClock extends Activity{
 					repeat1=repeat1+"\n";
 					count1=0;
 				}
-				repeat1=repeat1+ChangeToChinese(i)+"、";
+				repeat1=repeat1+ChangeToChinese(i)+", ";
 				break;
 		
 			case 2:
@@ -74,7 +75,7 @@ public class AddClock extends Activity{
 					repeat2=repeat2+"\n";
 					count2=0;
 				}
-				repeat2=repeat2+ChangeToChinese(i)+"、";
+				repeat2=repeat2+ChangeToChinese(i)+", ";
 				break;
 		
 			case 3:
@@ -83,7 +84,7 @@ public class AddClock extends Activity{
 					repeat3=repeat3+"\n";
 					count3=0;
 				}
-				repeat3=repeat3+ChangeToChinese(i)+"、";
+				repeat3=repeat3+ChangeToChinese(i)+", ";
 				break;
 			
 				default:
@@ -93,27 +94,27 @@ public class AddClock extends Activity{
 		repeat1=repeat1.substring(0, repeat1.length()-1);
 		repeat2=repeat2.substring(0, repeat2.length()-1);
 		repeat3=repeat3.substring(0, repeat3.length()-1);
-		
-		if(repeat1.equals("单周重复:")){
-			if(repeat2.equals("双周重复:")){
-				if(repeat3.equals("每周重复:"))
-					repeat="无";
+
+		if(repeat1.equals("Repeat on single week:")){
+			if(repeat2.equals("Repeat on dual week:")){
+				if(repeat3.equals("Repeat on every week:"))
+					repeat="No repeat";
 				else repeat=repeat3;
 			}
 			else{
-				if(repeat3.equals("每周重复:"))
+				if(repeat3.equals("Repeat on every week:"))
 					repeat=repeat2;
 				else repeat=repeat2+"\n"+repeat3;
 			}
 		}
 		else{
-			if(repeat2.equals("双周重复:")){
-				if(repeat3.equals("每周重复:"))
+			if(repeat2.equals("Repeat on dual week:")){
+				if(repeat3.equals("Repeat on every week:"))
 					repeat=repeat1;
 				else repeat=repeat1+"\n"+repeat3;
 			}
 			else{
-				if(repeat3.equals("每周重复:"))
+				if(repeat3.equals("Repeat on every week:"))
 					repeat=repeat1+"\n"+repeat2;
 				else repeat=repeat1+"\n"+repeat2+"\n"+repeat3;
 			}
@@ -121,10 +122,10 @@ public class AddClock extends Activity{
 			
 		
 		
-		String[] arr={"重复","铃声"};
+		String[] arr={"Frequency","Ring"};
 		String[] arr2=new String[2];
 		arr2[0]=repeat;
-		arr2[1]="吉他扫弦";
+		arr2[1]="Guitar";
 		List<Map<String,String>> listItems=new ArrayList<Map<String,String>>();
 		for(int i=0;i<arr.length;i++){
 			Map<String,String> listItem=new HashMap<String,String>();
@@ -161,9 +162,9 @@ public class AddClock extends Activity{
 		tp.setCurrentMinute(cl.get(Calendar.MINUTE));
 		db=SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().getPath()+"/myclock.db", null);
 		lv=(ListView) findViewById(R.id.ListViewInAddClock);
-		
-		String[] arr={"重复","铃声"};
-		String[] arr2={"无","吉他扫弦"};
+
+		String[] arr={"Frequency","Ring"};
+		String[] arr2={"No repeat","Guitar"};
 		List<Map<String,String>> listItems=new ArrayList<Map<String,String>>();
 		for(int i=0;i<arr.length;i++){
 			Map<String,String> listItem=new HashMap<String,String>();
@@ -197,7 +198,7 @@ public class AddClock extends Activity{
 				}
 				
 				else if(position==1){
-					//跳转到铃声选择
+					//锟斤拷转锟斤拷锟斤拷锟斤拷选锟斤拷
 				}
 			}
 			
@@ -207,7 +208,7 @@ public class AddClock extends Activity{
 			@Override
 			public void onClick(View source){
 				Intent intent1=new Intent(AddClock.this,MainActivity.class);
-				setTitle("闹钟");
+				setTitle("Alarmclock");
 				startActivity(intent1);
 				finish();
 			}
@@ -247,7 +248,7 @@ public class AddClock extends Activity{
 									
 				}			
 				Intent intent2=new Intent(AddClock.this,MainActivity.class);
-				setTitle("闹钟");
+				setTitle("Alarmclock");
 				startActivity(intent2);
 				finish();
 			}

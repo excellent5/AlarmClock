@@ -16,7 +16,7 @@
     		android:id="@+id/title"
     		android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
-    		android:text="闹钟"
+    		android:text="Alarmclock"
     		android:textSize="20dp"
     		android:layout_centerInParent="true"
     		/>
@@ -25,7 +25,7 @@
     		android:id="@+id/bn1"
     		android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
-    		android:text="编辑"
+    		android:text="Edit"
     		android:layout_alignParentLeft="true"
     		/>
     	

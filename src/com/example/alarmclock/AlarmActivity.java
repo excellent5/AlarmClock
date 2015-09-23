@@ -60,8 +60,8 @@ public class AlarmActivity extends Activity{
 		}
 		Log.v("tag","create!");
 		AlertDialog.Builder builder=new AlertDialog.Builder(AlarmActivity.this);
-		builder.setTitle("ÄÖÖÓ").setMessage("ÄÖÖÓÏìÁË,Wake up!!!")
-		.setPositiveButton("È·¶¨", new OnClickListener(){	
+		builder.setTitle("Alarm").setMessage("It has been your set alarming time,Wake up!!!")
+		.setPositiveButton("OK", new OnClickListener(){
 					@Override
 					public void onClick(DialogInterface dialog, int which){
 						alarmMusic.stop();
