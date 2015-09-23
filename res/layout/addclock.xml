@@ -15,7 +15,7 @@
     		android:id="@+id/TitleInAddClock"
     		android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
-    		android:text="添加闹钟"
+    		android:text="Add alarm"
     		android:textSize="20dp"
     		android:layout_centerInParent="true"
     		/>
@@ -24,7 +24,7 @@
     		android:id="@+id/QuitInAddClock"
     		android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
-    		android:text="取消"
+    		android:text="Cancel"
     		android:layout_alignParentLeft="true"
     		/>
     	
@@ -32,7 +32,7 @@
     		android:id="@+id/SaveInAddClock"
     		android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
-    		android:text="储存"
+    		android:text="Save"
     		android:layout_alignParentRight="true"
     		/>
     	
